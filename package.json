@@ -11,5 +11,8 @@
     "url": "IvanMar98"
   },
   "author": "IvanM",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
