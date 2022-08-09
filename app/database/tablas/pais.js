@@ -3,11 +3,11 @@ const { Sequelize } = require('sequelize');
 
  const Pais = sequelize.define('pais', {
      id_Pais: {
-        type:Sequelize.Datatype.STRING(45),
+        type:Sequelize.DataTypes.STRING(45),
         primaryKey: true,
      },
      Nombre_Pais: {
-        type:Sequelize.Datatype.STRING(45),
+        type:Sequelize.DataTypes.STRING(45),
         allowNull: false
      },
  },{
@@ -15,4 +15,4 @@ const { Sequelize } = require('sequelize');
      timestamps: false
  }); 
 
- module.exports. Pais;
+ module.exports =Pais;

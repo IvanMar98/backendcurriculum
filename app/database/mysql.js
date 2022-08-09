@@ -1,4 +1,5 @@
 const sequelize = require('./conexiondb'); 
+const Pais = require('./tablas/pais');
 init = function(){
     sequelize.authenticate().then(()=>{
         console.log("Conexion establecida con mysql");
@@ -7,5 +8,12 @@ init = function(){
     })
 } 
 
+getPais = function(callback){
+    Pais.findAll().then(pais=>callback(pais));
+
+}
+
 
 module.exports.init = init;  
+
+module.exports.getPais = getPais; 
