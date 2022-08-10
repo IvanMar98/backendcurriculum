@@ -2,6 +2,7 @@ const sequelize = require('./conexiondb');
 const Apoyo = require('./tablas/apoyo');
 const CuerpoAcademico = require('./tablas/cuerpo_academico');
 const Divisiones = require('./tablas/divisiones');
+const FuenteFinanciera = require('./tablas/fuente_financiera');
 const Pais = require('./tablas/pais');
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -25,6 +26,9 @@ getCuerpoAcademico = function(callback){
 getDivisiones = function(callback){
     Divisiones.findAll().then(divisiones => callback)
 }
+getFuenteFinanciera = function(callback){
+    FuenteFinanciera.findAll().then(fuentefinanciera => callback)
+}
 module.exports.init = init;  
 
 
@@ -33,4 +37,5 @@ module.exports.getPais = getPais;
 module.exports.getApoyo = getApoyo;
 module.exports.getCuerpoAcademico = getCuerpoAcademico;
 module.exports.getDivisiones = getDivisiones;
+module.exports.getFuenteFinanciera = getFuenteFinanciera;
 
