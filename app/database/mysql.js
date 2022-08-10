@@ -10,6 +10,7 @@ const Periodos = require('./tablas/periodos');
 const Roles = require('./tablas/roles');
 const TipoProyecto = require('./tablas/tipo_proyecto');
 const TipoPublicacion = require('./tablas/tipo_publicacion');
+const TipoRevista = require('./tablas/tipo_revista');
 
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -52,7 +53,9 @@ getTipoProyecto = function(callback){
 getTipoPublicacion = function(callback){
     TipoPublicacion.findAll().then(tipopublicacion => callback)
 }
-
+getTipoRevista = function(callback){
+    TipoRevista.findAll().then(tiporevista => callback)
+}
 module.exports.init = init;  
 
 
@@ -68,3 +71,4 @@ module.exports.getPeriodos = getPeriodos;
 module.exports.getRoles = getRoles;
 module.exports.getTipoProyecto = getTipoProyecto;
 module.exports.getTipoPublicacion = getTipoPublicacion;
+module.exports.getTipoRevista = getTipoRevista;
