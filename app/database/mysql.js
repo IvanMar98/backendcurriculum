@@ -1,4 +1,5 @@
 const sequelize = require('./conexiondb'); 
+const Apoyo = require('./tablas/apoyo');
 const Pais = require('./tablas/pais');
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -9,11 +10,13 @@ init = function(){
 } 
 
 getPais = function(callback){
-    Pais.findAll().then(pais=>callback(pais));
-
+    Pais.findAll().then(pais => callback(pais));
 }
-
+getApoyo = function(callback){
+    Apoyo.findAll().then(apoyo => callback(apoyo));
+}
 
 module.exports.init = init;  
 
 module.exports.getPais = getPais; 
+module.exports.getApoyo = getApoyo;
