@@ -5,6 +5,8 @@ const Divisiones = require('./tablas/divisiones');
 const FuenteFinanciera = require('./tablas/fuente_financiera');
 const Libros = require('./tablas/libros');
 const Pais = require('./tablas/pais');
+const Procedencias = require('./tablas/procedencias');
+
 init = function(){
     sequelize.authenticate().then(()=>{
         console.log("Conexion establecida con mysql");
@@ -33,6 +35,10 @@ getFuenteFinanciera = function(callback){
 getLibros= function(callback){
     Libros.findAll().then(libros => callback)
 }
+getProcedencias= function(callback){
+    Libros.findAll().then(procedencias => callback)
+}
+
 module.exports.init = init;  
 
 
@@ -43,4 +49,5 @@ module.exports.getCuerpoAcademico = getCuerpoAcademico;
 module.exports.getDivisiones = getDivisiones;
 module.exports.getFuenteFinanciera = getFuenteFinanciera;
 module.exports.getLibros = getLibros;
+module.exports.getProcedencias = getProcedencias;
 
