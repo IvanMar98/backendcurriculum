@@ -9,6 +9,7 @@ const Procedencias = require('./tablas/procedencias');
 const Periodos = require('./tablas/periodos');
 const Roles = require('./tablas/roles');
 const TipoProyecto = require('./tablas/tipo_proyecto');
+const TipoPublicacion = require('./tablas/tipo_publicacion');
 
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -17,8 +18,6 @@ init = function(){
         console.log("conexion no establecida", err);
     })
 } 
-
-
 
 getPais = function(callback){
     Pais.findAll().then(pais => callback(pais));
@@ -50,6 +49,9 @@ getRoles= function(callback){
 getTipoProyecto = function(callback){
     TipoProyecto.findAll().then(tipoproyecto => callback)
 }
+getTipoPublicacion = function(callback){
+    TipoPublicacion.findAll().then(tipopublicacion => callback)
+}
 
 module.exports.init = init;  
 
@@ -65,3 +67,4 @@ module.exports.getProcedencias = getProcedencias;
 module.exports.getPeriodos = getPeriodos;
 module.exports.getRoles = getRoles;
 module.exports.getTipoProyecto = getTipoProyecto;
+module.exports.getTipoPublicacion = getTipoPublicacion;
