@@ -6,6 +6,7 @@ const FuenteFinanciera = require('./tablas/fuente_financiera');
 const Libros = require('./tablas/libros');
 const Pais = require('./tablas/pais');
 const Procedencias = require('./tablas/procedencias');
+const Periodos = require('./tablas/periodos');
 
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -38,6 +39,9 @@ getLibros= function(callback){
 getProcedencias= function(callback){
     Libros.findAll().then(procedencias => callback)
 }
+getPeriodos = function(callback){
+    Periodos.findAll().then(periodos => callback)
+}
 
 module.exports.init = init;  
 
@@ -50,4 +54,5 @@ module.exports.getDivisiones = getDivisiones;
 module.exports.getFuenteFinanciera = getFuenteFinanciera;
 module.exports.getLibros = getLibros;
 module.exports.getProcedencias = getProcedencias;
+module.exports.getPeriodos = getPeriodos;
 
