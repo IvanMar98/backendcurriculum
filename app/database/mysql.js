@@ -8,6 +8,7 @@ const Pais = require('./tablas/pais');
 const Procedencias = require('./tablas/procedencias');
 const Periodos = require('./tablas/periodos');
 const Roles = require('./tablas/roles');
+const TipoProyecto = require('./tablas/tipo_proyecto');
 
 init = function(){
     sequelize.authenticate().then(()=>{
@@ -46,7 +47,9 @@ getPeriodos = function(callback){
 getRoles= function(callback){
     Roles.findAll().then(roles => callback)
 }
-
+getTipoProyecto = function(callback){
+    TipoProyecto.findAll().then(tipoproyecto => callback)
+}
 
 module.exports.init = init;  
 
@@ -61,3 +64,4 @@ module.exports.getLibros = getLibros;
 module.exports.getProcedencias = getProcedencias;
 module.exports.getPeriodos = getPeriodos;
 module.exports.getRoles = getRoles;
+module.exports.getTipoProyecto = getTipoProyecto;
