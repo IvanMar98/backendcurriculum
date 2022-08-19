@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 const sequelize = require('../conexiondb');
 
-const Procedencias = sequelize.define('procedencias', {
+const Procedencias = sequelize.define('procedencia', {
     id_Procedencia:{
         type:Sequelize.DataTypes.INTEGER,
         primaryKey: true,
